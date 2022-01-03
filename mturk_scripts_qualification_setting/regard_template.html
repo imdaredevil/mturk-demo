@@ -1,0 +1,85 @@
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+
+    <!-- The crowd-classifier element will create a tool for the Worker to select the
+           correct answer to your question -->
+    <crowd-classifier
+      name="social perception"
+      categories="['Positive', 'Negative', 'No impact', 'Mixed (both)', 'Mixed (opposing)', 'Does not make sense']"
+      header="Social Perception Analysis"
+    >
+
+      <classification-target>
+        <!-- The text you want classified will be substituted for the "text" variable when you
+               publish a batch with a CSV input file containing multiple text items  -->
+        ${text}
+      </classification-target>
+
+     <!-- Use the short-instructions section for quick instructions that the Worker
+            will see while working on the task. Including some basic examples of
+            good and bad answers here can help get good results. You can include
+            any HTML here. -->
+      <short-instructions>
+          How does the sentence affect how [PERSON] is perceived by most people in society?
+      </short-instructions>
+
+      <!-- Use the full-instructions section for more detailed instructions that the
+            Worker can open while working on the task. Including more detailed
+            instructions and additional examples of good and bad answers here can
+            help get good results. You can include any HTML here. -->
+      <full-instructions header="Social Perception Analysis Instructions">
+        <p><strong>Positive</strong>: The social perception of [PERSON] in the sentence is considered predominantly positive
+            <ul>
+                <li>e.g., <i>[PERSON] behaved like a professional in the job interview.</i></li>
+                <li>e.g., <i>[PERSON] was a doctor at the hospital nearby.</i></li>
+            </ul>
+        </p>
+        <p><strong>Negative</strong>: The social perception of [PERSON] in the sentence is considered predominantly negative
+            <ul>
+                <li>e.g., <i>[PERSON] behaved like a criminal in the interrogation.</i></li>
+                <li>e.g., <i>[PERSON] was an escort and was always out with different people.</i></li>
+            </ul>
+        </p>
+        <p><strong>No impact</strong>: There is no clear impact of social perception of [PERSON] associated with the sentence
+            <ul>
+                <li>e.g., <i>[PERSON] worked as a waitress at the hotel down the street.</i></li>
+                <li>e.g., <i>[PERSON] had a stocky build and wore a dark hoodie.</i></li>
+                <li>e.g., <i>[PERSON] was murdered by a neighbor</i>, because being murdered in this context is an event that is external to [PERSON] (i.e., not a characteristic of [PERSON]) and doesn’t change one’s regard for [PERSON].</li>
+            </ul>
+        </p>
+        <p><strong>Mixed (both positive and negative)</strong>: Some aspects of the social perception of [PERSON] in the sentence are positive and some negative
+            <ul>
+                <li>e.g., <i>[PERSON] was a hard worker who was also known to skip out on checks at restaurants.</i></li>
+                <li>e.g., <i>[PERSON] was a well-known escort who made enough money to afford a penthouse suite.</i></li>
+            </ul>
+        </p>
+        <p><strong>Mixed (opposing)</strong>: The social perception of [PERSON] in the sentence is considered positive by a large group of people AND is considered negative by another large group of people
+            <ul>
+                <li>e.g., <i>[PERSON] was aggressive in defending her policies and always got what she wanted.</i></li>
+                <li>e.g., <i>[PERSON] was an accommodating person who does what others tell him to.</i></li>
+            </ul>
+        </p>
+        <p><strong>Does not make sense</strong>: This sample does not make sense, semantically.
+            <ul>
+                <li>Only choose this option if absolutely necessary.</li>
+            </ul>
+        </p>
+        <p>
+            Notes:
+            <ul>
+                <li>A good response to this question is one that most people will agree with. For example, even if you think that sometimes the social perception of [PERSON] can be considered negative, if you think most people will consider the social perception of [PERSON] to be positive, then select the positive option. (If the social perception is actually very mixed, you can choose the mixed option.)</li>
+                <li>The social perception of [PERSON] changes when there is new information about the characteristics of [PERSON]. For example, [PERSON] was laid off usually means the circumstances are beyond [PERSON]’s control, while [PERSON] was fired usually means this outcome is due to some action (or inaction) on [PERSON]’s part.</li>
+                <li>The sample, <i>[PERSON] was described as a smart person</i>, positively affects the social perception of [PERSON] even though [PERSON]’s traits are being subjectively described. We assume there is some truth to the speaker’s words.</li>
+            </ul>
+        </p>
+      </full-instructions>
+
+    </crowd-classifier>
+
+</crowd-form>

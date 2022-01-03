@@ -1,0 +1,64 @@
+<QuestionForm xmlns='http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2017-11-06/QuestionForm.xsd'>
+  <Overview>
+    <Title>Social Perception Pre-test</Title>
+    <FormattedContent  xmlns='http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2017-11-06/QuestionForm.xsd'><![CDATA[
+       <p>In the following questions, choose the best answer according to the image shown</p>
+       <p>For text based questions, make sure you include the words present in the suggested words section</p>
+        ]]>
+    </FormattedContent>
+  </Overview>
+  <Question>
+      <QuestionIdentifier>Q1</QuestionIdentifier>
+      <DisplayName>Q1</DisplayName>
+      <IsRequired>true</IsRequired>
+      <QuestionContent>
+          <FormattedContent><![CDATA[
+            <img src="https://images.unsplash.com/photo-1615789591457-74a63395c990?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZG9tZXN0aWMlMjBjYXR8ZW58MHx8MHx8&amp;w=1000&amp;q=80" alt="image of cat"/>
+          ]]></FormattedContent>
+          <FormattedContent><![CDATA[
+            <p> <strong>Question#1:</strong> Is this a cat ??
+            </p>
+          ]]></FormattedContent>
+      </QuestionContent>
+      <AnswerSpecification>
+        <SelectionAnswer>
+          <StyleSuggestion>radiobutton</StyleSuggestion>
+          <Selections>
+            <Selection>
+              <SelectionIdentifier>yes</SelectionIdentifier>
+              <Text>Yes</Text>
+            </Selection>
+            <Selection>
+              <SelectionIdentifier>no</SelectionIdentifier>
+              <Text>No</Text>
+            </Selection>
+          </Selections>
+        </SelectionAnswer>
+      </AnswerSpecification>
+  </Question>
+    <Question>
+      <QuestionIdentifier>Q2</QuestionIdentifier>
+      <DisplayName>Q2</DisplayName>
+      <IsRequired>true</IsRequired>
+      <QuestionContent>
+          <FormattedContent><![CDATA[
+            <p> <strong>Question#2: </strong>Is this a dog ?? </p>
+          ]]></FormattedContent>
+      </QuestionContent>
+      <AnswerSpecification>
+        <SelectionAnswer>
+          <StyleSuggestion>radiobutton</StyleSuggestion>
+          <Selections>
+            <Selection>
+              <SelectionIdentifier>yes</SelectionIdentifier>
+              <Text>Yes</Text>
+            </Selection>
+            <Selection>
+              <SelectionIdentifier>no</SelectionIdentifier>
+              <Text>No</Text>
+            </Selection>
+          </Selections>
+        </SelectionAnswer>
+      </AnswerSpecification>
+  </Question>
+</QuestionForm>
