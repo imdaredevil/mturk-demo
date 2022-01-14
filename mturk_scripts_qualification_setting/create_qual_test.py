@@ -5,6 +5,7 @@ import boto3
 import json
 
 config_json = json.load(open("../config.json", "r"))
+config_json = config_json["personal"]
 MTURK_SANDBOX = 'https://mturk-requester-sandbox.us-east-1.amazonaws.com'
 MTURK_PROD = 'https://mturk-requester.us-east-1.amazonaws.com'
 REGARD_REWARD = '0.04'
@@ -26,7 +27,7 @@ def make_regard_qual_test(mturk):
 	questions = open('regard_question_template.xml', mode='r').read()
 	answers = open('regard_answer_template.xml', mode='r').read()
 	qual_response = mturk.create_qualification_type(
-		Name='Vision test',
+		Name='Vision test 2',
 		Keywords='animal knowledge, cat and dog, visual perception',
 		Description='This is a pre-test for identifying cats and dogs.',
 		QualificationTypeStatus='Active',
