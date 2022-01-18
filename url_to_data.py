@@ -26,17 +26,9 @@ BATCH_SIZE = 10
 
 
 def get_signed_url(path):
-    try:
-        response = s3_client.generate_presigned_url('get_object',
-                                                    Params={'Bucket': S3_BUCKET,
-                                                            'Key': path},
-                                                    ExpiresIn=10520000)
-    except ClientError as e:
-        logging.error(e)
-        return None
-
-    # The response contains the presigned URL
-    return response
+    bucket_location = s3_client.get_bucket_location(Bucket=S3_BUCKET)['LocationConstraint']
+    url = "https://%s.s3.%s.amazonaws.com/%s" % (S3_BUCKET,bucket_location, path)
+    return url
 
 
 def construct_csv(image_batch):
@@ -55,7 +47,7 @@ def construct_csv(image_batch):
     f.close()
 
 def path_to_dict(file_name, folder_path):
-    transaction_id, trial_id, trial_name, attack_id = file_name.split("_")
+    transaction_id, trial_id, trial_name, attack_id = file_name.split("-")
     return {
         "transaction_id": transaction_id,
         "trial_id": trial_id,
