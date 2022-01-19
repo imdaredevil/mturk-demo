@@ -78,18 +78,39 @@
           To preview the element with an example image, try setting the src attribute to
           "https://s3.amazonaws.com/cv-demo-images/basketball-outdoor.jpg" -->
     <!-- <img src="http://d3l6xw9j1xm30q.cloudfront.net/ID_8bd370f99ca265972ae9d907502ae87d5d71568c_x9367b48_FACE_WITHOUT_GLASS_1_m50010001Q94.jpg" style="max-width: 100%; max-height: 250px;  pointer-events: none" />-->
-    <!-- <img src=${url} style="max-width: 100%; max-height: 250px;  pointer-events: none" /> -->
+    <!-- <img src=${url_1} style="max-width: 100%; max-height: 250px;  pointer-events: none" /> -->
     <!-- <li style="color:rgb(0,0,255);"><strong>Suggested words:</strong></li> -->
       <p style="display: none" id="time_states"></p>
       <p style="display: none" id="current_page">1</p>
-      <!-- <div id="question toggle">
-            <button type="button" onclick="nextPage()" id="next">Next</button>
-      <button type="button" onclick="prevPage()" id="prev">Prev</button>
-      </div> -->
-      <!-- <p>Time remaining: <strong id="timer"></strong></p> -->
-      <!-- <div id="time-up">
-            <p>Your Time for this question is up!</p>
-      </div> -->
+      <div id="question toggle"  style="display: none; width: 100%;">
+      <div  style="display: inline-flex;justify-content: space-between; width: 100%;">
+        <div width="10%">
+        <button type="button" style="font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0.06px;
+        padding: 0 20px 0 20px;
+        height: 42px;
+        margin: 0 8px 0 0;
+        background-color: #ff9900;
+        color: white;
+        border-color: #125488;
+        box-sizing: border-box;" onclick="prevPage()" id="prev">&#60; Prev</button></div>
+            <p style="width: 50%; text-align: center; font-weight: bold;font-size: 1.5rem;margin-top: 0px;margin-bottom: 0px;">Time remaining: <strong id="timer"></strong></p>
+            <div width="10%"><button style="font-size: 12px;
+             line-height: 20px;
+             letter-spacing: 0.06px;
+             padding: 0 20px 0 20px;
+             height: 42px;
+             margin: 0 8px 0 0;
+             background-color: #ff9900;
+             color: white;
+             border-color: #125488;
+             box-sizing: border-box;" type="button" onclick="nextPage()" id="next">Next &#62;</button></div>
+      </div>
+      <div id="time-up" style="display: none; text-align: center; padding: 5%;">
+        <h1>Your Time for this question is up!</h1>
+     </div>
+    </div>
       <div id="instructions" style="text-align: justify;">
             <center><h1>Instructions</h1></center>
             <p>
@@ -192,27 +213,159 @@
             </div>
             <div style="display: inline-flex; justify-content: space-between;width: 100%;">
             <div style="width: 35%">
-                  <img width="70%" style="margin-left: 10%; pointer-events: none;" height="auto" src="${url}" />
+                  <img width="70%" style="margin-left: 10%; pointer-events: none;" height="auto" src="${url_1}" />
             </div> 
             <div style="width: 60%">
             <p><b>Question#1: Describe in detail the item or alteration that is being used to hide the identity of the person</b></p>
             <p style="color: #125488"><b>Your answer:</b></p>
-            <crowd-text-area name="question1" rows="4" style="background-color: white;border: solid 1px" required></crowd-text-area>
+            <crowd-text-area name="question1_1" rows="4" style="background-color: white;border: solid 1px" required></crowd-text-area>
             <p><b>Question#2: Describe why the item or alteration being used to hide the identity looks unnatural </b></p>
             <p style="color: #125488"><b>Your answer:</b></p>
-            <crowd-text-area name="question2" rows="4" required style="background-color: white; border: solid 1px;"></crowd-text-area>
+            <crowd-text-area name="question2_1" rows="4" required style="background-color: white; border: solid 1px;"></crowd-text-area>
             </div>
             </div>
-      </div>  
+      </div> 
+      <div id="q2" class="question" style="display: none">
+        <div style="border-color: black; margin: 1%; padding: 1%;">
+              <div style="display: inline-flex; align-items: center;">
+                    <div style="width: 40%">
+                    <h3>Instructions:</h3>
+                    <ul>
+                          <li>Use complete sentences in your answers.</li>
+                          <li>Your answer should be within 8-30 words.</li>
+                          <li>Do not describe unaltered face parts in the image or parts of the image surrounding the face region.</li>
+                          <li>The opposite diagram shows the face parts for your reference</li>
+                    </ul>
+                    </div>  
+                    <div style="width: 35%">
+                          <img width="100%" height="auto" src="https://custom-images-isi.s3.us-west-1.amazonaws.com/Face+sample.png" style="pointer-events: none;"/> 
+                    </div>
+              </div>
+        </div>
+        <div style="display: inline-flex; justify-content: space-between;width: 100%;">
+        <div style="width: 35%">
+              <img width="70%" style="margin-left: 10%; pointer-events: none;" height="auto" src="${url_2}" />
+        </div> 
+        <div style="width: 60%">
+        <p><b>Question#1: Describe in detail the item or alteration that is being used to hide the identity of the person</b></p>
+        <p style="color: #125488"><b>Your answer:</b></p>
+        <crowd-text-area name="question1_2" rows="4" style="background-color: white;border: solid 1px" required></crowd-text-area>
+        <p><b>Question#2: Describe why the item or alteration being used to hide the identity looks unnatural </b></p>
+        <p style="color: #125488"><b>Your answer:</b></p>
+        <crowd-text-area name="question2_2" rows="4" required style="background-color: white; border: solid 1px;"></crowd-text-area>
+        </div>
+        </div>
+  </div>  
+  <div id="q3" class="question" style="display: none">
+    <div style="border-color: black; margin: 1%; padding: 1%;">
+          <div style="display: inline-flex; align-items: center;">
+                <div style="width: 40%">
+                <h3>Instructions:</h3>
+                <ul>
+                      <li>Use complete sentences in your answers.</li>
+                      <li>Your answer should be within 8-30 words.</li>
+                      <li>Do not describe unaltered face parts in the image or parts of the image surrounding the face region.</li>
+                      <li>The opposite diagram shows the face parts for your reference</li>
+                </ul>
+                </div>  
+                <div style="width: 35%">
+                      <img width="100%" height="auto" src="https://custom-images-isi.s3.us-west-1.amazonaws.com/Face+sample.png" style="pointer-events: none;"/> 
+                </div>
+          </div>
+    </div>
+    <div style="display: inline-flex; justify-content: space-between;width: 100%;">
+    <div style="width: 35%">
+          <img width="70%" style="margin-left: 10%; pointer-events: none;" height="auto" src="${url_3}" />
+    </div> 
+    <div style="width: 60%">
+    <p><b>Question#1: Describe in detail the item or alteration that is being used to hide the identity of the person</b></p>
+    <p style="color: #125488"><b>Your answer:</b></p>
+    <crowd-text-area name="question1_3" rows="4" style="background-color: white;border: solid 1px" required></crowd-text-area>
+    <p><b>Question#2: Describe why the item or alteration being used to hide the identity looks unnatural </b></p>
+    <p style="color: #125488"><b>Your answer:</b></p>
+    <crowd-text-area name="question2_3" rows="4" required style="background-color: white; border: solid 1px;"></crowd-text-area>
+    </div>
+    </div>
+</div>
+<div id="q4" class="question" style="display: none">
+    <div style="border-color: black; margin: 1%; padding: 1%;">
+          <div style="display: inline-flex; align-items: center;">
+                <div style="width: 40%">
+                <h3>Instructions:</h3>
+                <ul>
+                      <li>Use complete sentences in your answers.</li>
+                      <li>Your answer should be within 8-30 words.</li>
+                      <li>Do not describe unaltered face parts in the image or parts of the image surrounding the face region.</li>
+                      <li>The opposite diagram shows the face parts for your reference</li>
+                </ul>
+                </div>  
+                <div style="width: 35%">
+                      <img width="100%" height="auto" src="https://custom-images-isi.s3.us-west-1.amazonaws.com/Face+sample.png" style="pointer-events: none;"/> 
+                </div>
+          </div>
+    </div>
+    <div style="display: inline-flex; justify-content: space-between;width: 100%;">
+    <div style="width: 35%">
+          <img width="70%" style="margin-left: 10%; pointer-events: none;" height="auto" src="${url_4}" />
+    </div> 
+    <div style="width: 60%">
+    <p><b>Question#1: Describe in detail the item or alteration that is being used to hide the identity of the person</b></p>
+    <p style="color: #125488"><b>Your answer:</b></p>
+    <crowd-text-area name="question1_4" rows="4" style="background-color: white;border: solid 1px" required></crowd-text-area>
+    <p><b>Question#2: Describe why the item or alteration being used to hide the identity looks unnatural </b></p>
+    <p style="color: #125488"><b>Your answer:</b></p>
+    <crowd-text-area name="question2_4" rows="4" required style="background-color: white; border: solid 1px;"></crowd-text-area>
+    </div>
+    </div>
+</div>
+<div id="q5" class="question" style="display: none">
+    <div style="border-color: black; margin: 1%; padding: 1%;">
+          <div style="display: inline-flex; align-items: center;">
+                <div style="width: 40%">
+                <h3>Instructions:</h3>
+                <ul>
+                      <li>Use complete sentences in your answers.</li>
+                      <li>Your answer should be within 8-30 words.</li>
+                      <li>Do not describe unaltered face parts in the image or parts of the image surrounding the face region.</li>
+                      <li>The opposite diagram shows the face parts for your reference</li>
+                </ul>
+                </div>  
+                <div style="width: 35%">
+                      <img width="100%" height="auto" src="https://custom-images-isi.s3.us-west-1.amazonaws.com/Face+sample.png" style="pointer-events: none;"/> 
+                </div>
+          </div>
+    </div>
+    <div style="display: inline-flex; justify-content: space-between;width: 100%;">
+    <div style="width: 35%">
+          <img width="70%" style="margin-left: 10%; pointer-events: none;" height="auto" src="${url_5}" />
+    </div> 
+    <div style="width: 60%">
+    <p><b>Question#1: Describe in detail the item or alteration that is being used to hide the identity of the person</b></p>
+    <p style="color: #125488"><b>Your answer:</b></p>
+    <crowd-text-area name="question1_5" rows="4" style="background-color: white;border: solid 1px" required></crowd-text-area>
+    <p><b>Question#2: Describe why the item or alteration being used to hide the identity looks unnatural </b></p>
+    <p style="color: #125488"><b>Your answer:</b></p>
+    <crowd-text-area name="question2_5" rows="4" required style="background-color: white; border: solid 1px;"></crowd-text-area>
+    </div>
+    </div>
+</div> 
       <br>
       <br>
 </crowd-form>
 <script>
       function sampleContinue() {
-            let q1 = document.getElementById("q1");
-            q1.style.display = "block";
             let sample = document.getElementById("sample")
             sample.style.display = "none";
+            let time_states = document.getElementById("time_states");
+            let time_State = []
+            for(let i=0;i<=NUM_QUESTIONS; i += 1) {
+                    time_State[i] = 600;
+            }
+            time_states.innerHTML = JSON.stringify(time_State);
+            setCurrentPage(1);
+            setTimer();
+            let timercontrol = document.getElementById("question toggle")
+            timercontrol.style.display = "block";
       }
       function instructionContinue() {
             let instruction = document.getElementById("instructions");
@@ -224,11 +377,11 @@
       var timer;
       function setNext(disabled) {
             let next_btn = document.getElementById("next");
-            next_btn.disabled = disabled;
+            next_btn.style.display = disabled;
       }
       function setPrev(disabled) {
             let prev_btn = document.getElementById("prev");
-            prev_btn.disabled = disabled;
+            prev_btn.style.display = disabled;
       }
       function getCurrentPage() {
              let current_page = document.getElementById("current_page").innerHTML;
@@ -253,8 +406,8 @@
                         document.getElementById("time-up").style.display = "block";
                    }
              }
-             setNext(page == NUM_QUESTIONS);
-             setPrev(page == 1);
+             setNext(page == NUM_QUESTIONS ? "none" : "block");
+             setPrev(page == 1 ? "none" : "block");
       }
       function setTimeState(page) {
             let timer = document.getElementById("timer").innerHTML;
@@ -300,12 +453,4 @@
             setCurrentPage(current_page - 1);
             setTimer();
       }
-      let time_states = document.getElementById("time_states");
-      let time_State = []
-      for(let i=0;i<=NUM_QUESTIONS; i += 1) {
-            time_State[i] = 20;
-      }
-      time_states.innerHTML = JSON.stringify(time_State);
-      // setCurrentPage(1);
-      // setTimer();
  </script>
