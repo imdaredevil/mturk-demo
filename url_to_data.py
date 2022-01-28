@@ -13,13 +13,13 @@ config_json = json.load(open("./config.json", "r"))
 config_json = config_json["isi"]
 AWS_ACCESS_KEY_ID = config_json['AWS_ACCESS_ID']
 AWS_SECRET_ACCESS_KEY = config_json['AWS_ACCESS_SECRET']
-IMAGE_PATH = "AMT_IMAGES/"
-S3_BUCKET = "amt-images-isi"
+IMAGE_PATH = "AMT_IMAGES_CROPPED/"
+S3_BUCKET = "amt-images-cropped-isi"
 s3_client = boto3.client('s3', 
                         region_name="us-west-1",
                         aws_access_key_id=AWS_ACCESS_KEY_ID,
 						aws_secret_access_key=AWS_SECRET_ACCESS_KEY)
-BATCH_PATH = "AMT_BATCHES/"
+BATCH_PATH = "AMT_BATCHES_CROPPED/"
 IMAGE_PROPS = ["transaction_id","trial_id","trial_name","attack_id", "attack_id_full"]
 DATA_URL_COLUMN = "url"
 BATCH_SIZE = 10
@@ -33,17 +33,17 @@ def get_signed_url(path):
 
 def construct_csv(image_batch):
     batch_no = image_batch["batch_number"]
-    f  = open(f"{BATCH_PATH}/batch_{batch_no}.csv", "w")
-    writer = csv.DictWriter(f,IMAGE_PROPS + [DATA_URL_COLUMN])
-    writer.writeheader()
-    for image in image_batch["images"]:
-        row = {}
+    row = {}
+    for i, image in enumerate(image_batch["images"]):
         for key in image:
             if key in IMAGE_PROPS:
-                row[key] = image[key]
+                row[f"{key}_{i}"] = image[key]
             elif key == "path":
-                row[DATA_URL_COLUMN] = get_signed_url(image[key]) 
-        writer.writerow(row)
+                row[f"{DATA_URL_COLUMN}_{i+1}"] = get_signed_url(image[key]) 
+    f  = open(f"{BATCH_PATH}/batch_{batch_no}.csv", "w")
+    writer = csv.DictWriter(f,list(row.keys()))
+    writer.writeheader()
+    writer.writerow(row)
     f.close()
 
 def path_to_dict(file_name, folder_path):

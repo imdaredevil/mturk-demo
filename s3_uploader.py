@@ -7,8 +7,8 @@ config_json = json.load(open("./config.json", "r"))
 config_json = config_json["isi"]
 AWS_ACCESS_KEY_ID = config_json['AWS_ACCESS_ID']
 AWS_SECRET_ACCESS_KEY = config_json['AWS_ACCESS_SECRET']
-IMAGE_PATH = "AMT_IMAGES/"
-S3_BUCKET = "amt-images-isi"
+IMAGE_PATH = "AMT_IMAGES_CROPPED/"
+S3_BUCKET = "amt-images-cropped-isi"
 
 
 s3_client = boto3.client('s3', 

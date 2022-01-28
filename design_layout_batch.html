@@ -217,9 +217,11 @@
             </div> 
             <div style="width: 60%">
             <p><b>Question#1: Describe in detail the item or alteration that is being used to hide the identity of the person</b></p>
+            <div id="error1_1" style="display: block">Must be between 8 to 30 words long and can contain only alphabets, commas and space</div>
             <p style="color: #125488"><b>Your answer:</b></p>
             <crowd-text-area name="question1_1" rows="4" style="background-color: white;border: solid 1px" required></crowd-text-area>
             <p><b>Question#2: Describe why the item or alteration being used to hide the identity looks unnatural </b></p>
+            <div id="error2_1" style="display: block">Must be between 8 to 30 words long and can contain only alphabets, commas and space</div>
             <p style="color: #125488"><b>Your answer:</b></p>
             <crowd-text-area name="question2_1" rows="4" required style="background-color: white; border: solid 1px;"></crowd-text-area>
             </div>
@@ -248,9 +250,11 @@
         </div> 
         <div style="width: 60%">
         <p><b>Question#1: Describe in detail the item or alteration that is being used to hide the identity of the person</b></p>
+        <div id="error1_2" style="display: block">Must be between 8 to 30 words long and can contain only alphabets, commas and space</div>
         <p style="color: #125488"><b>Your answer:</b></p>
         <crowd-text-area name="question1_2" rows="4" style="background-color: white;border: solid 1px" required></crowd-text-area>
         <p><b>Question#2: Describe why the item or alteration being used to hide the identity looks unnatural </b></p>
+        <div id="error2_2" style="display: block">Must be between 8 to 30 words long and can contain only alphabets, commas and space</div>
         <p style="color: #125488"><b>Your answer:</b></p>
         <crowd-text-area name="question2_2" rows="4" required style="background-color: white; border: solid 1px;"></crowd-text-area>
         </div>
@@ -279,10 +283,12 @@
     </div> 
     <div style="width: 60%">
     <p><b>Question#1: Describe in detail the item or alteration that is being used to hide the identity of the person</b></p>
-    <p style="color: #125488"><b>Your answer:</b></p>
+    <div id="error1_3" style="display: block">Must be between 8 to 30 words long and can contain only alphabets, commas and space</div>
+        <p style="color: #125488"><b>Your answer:</b></p>
     <crowd-text-area name="question1_3" rows="4" style="background-color: white;border: solid 1px" required></crowd-text-area>
     <p><b>Question#2: Describe why the item or alteration being used to hide the identity looks unnatural </b></p>
-    <p style="color: #125488"><b>Your answer:</b></p>
+    <div id="error2_3" style="display: block">Must be between 8 to 30 words long and can contain only alphabets, commas and space</div>
+        <p style="color: #125488"><b>Your answer:</b></p>
     <crowd-text-area name="question2_3" rows="4" required style="background-color: white; border: solid 1px;"></crowd-text-area>
     </div>
     </div>
@@ -310,9 +316,11 @@
     </div> 
     <div style="width: 60%">
     <p><b>Question#1: Describe in detail the item or alteration that is being used to hide the identity of the person</b></p>
+    <div id="error1_4" style="display: block">Must be between 8 to 30 words long and can contain only alphabets, commas and space</div>
     <p style="color: #125488"><b>Your answer:</b></p>
     <crowd-text-area name="question1_4" rows="4" style="background-color: white;border: solid 1px" required></crowd-text-area>
     <p><b>Question#2: Describe why the item or alteration being used to hide the identity looks unnatural </b></p>
+    <div id="error2_4" style="display: block">Must be between 8 to 30 words long and can contain only alphabets, commas and space</div>
     <p style="color: #125488"><b>Your answer:</b></p>
     <crowd-text-area name="question2_4" rows="4" required style="background-color: white; border: solid 1px;"></crowd-text-area>
     </div>
@@ -341,18 +349,191 @@
     </div> 
     <div style="width: 60%">
     <p><b>Question#1: Describe in detail the item or alteration that is being used to hide the identity of the person</b></p>
+    <div id="error1_5" style="display: block">Must be between 8 to 30 words long and can contain only alphabets, commas and space</div>
     <p style="color: #125488"><b>Your answer:</b></p>
     <crowd-text-area name="question1_5" rows="4" style="background-color: white;border: solid 1px" required></crowd-text-area>
     <p><b>Question#2: Describe why the item or alteration being used to hide the identity looks unnatural </b></p>
+    <div id="error2_5" style="display: block">Must be between 8 to 30 words long and can contain only alphabets, commas and space</div>
     <p style="color: #125488"><b>Your answer:</b></p>
     <crowd-text-area name="question2_5" rows="4" required style="background-color: white; border: solid 1px;"></crowd-text-area>
     </div>
     </div>
 </div> 
+<div id="q6" class="question" style="display: none">
+      <div style="border-color: black; margin: 1%; padding: 1%;">
+            <div style="display: inline-flex; align-items: center;">
+                  <div style="width: 40%">
+                  <h3>Instructions:</h3>
+                  <ul>
+                        <li>Use complete sentences in your answers.</li>
+                        <li>Your answer should be within 8-30 words.</li>
+                        <li>Do not describe unaltered face parts in the image or parts of the image surrounding the face region.</li>
+                        <li>The opposite diagram shows the face parts for your reference</li>
+                  </ul>
+                  </div>  
+                  <div style="width: 35%">
+                        <img width="100%" height="auto" src="https://custom-images-isi.s3.us-west-1.amazonaws.com/Face+sample.png" style="pointer-events: none;"/> 
+                  </div>
+            </div>
+      </div>
+      <div style="display: inline-flex; justify-content: space-between;width: 100%;">
+      <div style="width: 35%">
+            <img width="70%" style="margin-left: 10%; pointer-events: none;" height="auto" src="${url_6}" />
+      </div> 
+      <div style="width: 60%">
+      <p><b>Question#1: Describe in detail the item or alteration that is being used to hide the identity of the person</b></p>
+      <div id="error1_6" style="display: none;  font-weight: bolder;color: red">Must be between 8 to 30 words long and can contain only alphabets, commas and space</div>
+      <p style="color: #125488"><b>Your answer:</b></p>
+      <crowd-text-area name="question1_6" rows="4" style="background-color: white;border: solid 1px" required></crowd-text-area>
+      <p><b>Question#2: Describe why the item or alteration being used to hide the identity looks unnatural </b></p>
+      <div id="error2_6" style="display: block">Must be between 8 to 30 words long and can contain only alphabets, commas and space</div>
+      <p style="color: #125488"><b>Your answer:</b></p>
+      <crowd-text-area name="question2_6" rows="4" required style="background-color: white; border: solid 1px;"></crowd-text-area>
+      </div>
+      </div>
+  </div> 
+  <div id="q7" class="question" style="display: none">
+      <div style="border-color: black; margin: 1%; padding: 1%;">
+            <div style="display: inline-flex; align-items: center;">
+                  <div style="width: 40%">
+                  <h3>Instructions:</h3>
+                  <ul>
+                        <li>Use complete sentences in your answers.</li>
+                        <li>Your answer should be within 8-30 words.</li>
+                        <li>Do not describe unaltered face parts in the image or parts of the image surrounding the face region.</li>
+                        <li>The opposite diagram shows the face parts for your reference</li>
+                  </ul>
+                  </div>  
+                  <div style="width: 35%">
+                        <img width="100%" height="auto" src="https://custom-images-isi.s3.us-west-1.amazonaws.com/Face+sample.png" style="pointer-events: none;"/> 
+                  </div>
+            </div>
+      </div>
+      <div style="display: inline-flex; justify-content: space-between;width: 100%;">
+      <div style="width: 35%">
+            <img width="70%" style="margin-left: 10%; pointer-events: none;" height="auto" src="${url_7}" />
+      </div> 
+      <div style="width: 60%">
+      <p><b>Question#1: Describe in detail the item or alteration that is being used to hide the identity of the person</b></p>
+      <div id="error1_7" style="display: block">Must be between 8 to 30 words long and can contain only alphabets, commas and space</div>
+      <p style="color: #125488"><b>Your answer:</b></p>
+      <crowd-text-area name="question1_7" rows="4" style="background-color: white;border: solid 1px" required></crowd-text-area>
+      <p><b>Question#2: Describe why the item or alteration being used to hide the identity looks unnatural </b></p>
+      <div id="error2_7" style="display: block">Must be between 8 to 30 words long and can contain only alphabets, commas and space</div>
+      <p style="color: #125488"><b>Your answer:</b></p>
+      <crowd-text-area name="question2_7" rows="4" required style="background-color: white; border: solid 1px;"></crowd-text-area>
+      </div>
+      </div>
+  </div> 
+  <div id="q8" class="question" style="display: none">
+      <div style="border-color: black; margin: 1%; padding: 1%;">
+            <div style="display: inline-flex; align-items: center;">
+                  <div style="width: 40%">
+                  <h3>Instructions:</h3>
+                  <ul>
+                        <li>Use complete sentences in your answers.</li>
+                        <li>Your answer should be within 8-30 words.</li>
+                        <li>Do not describe unaltered face parts in the image or parts of the image surrounding the face region.</li>
+                        <li>The opposite diagram shows the face parts for your reference</li>
+                  </ul>
+                  </div>  
+                  <div style="width: 35%">
+                        <img width="100%" height="auto" src="https://custom-images-isi.s3.us-west-1.amazonaws.com/Face+sample.png" style="pointer-events: none;"/> 
+                  </div>
+            </div>
+      </div>
+      <div style="display: inline-flex; justify-content: space-between;width: 100%;">
+      <div style="width: 35%">
+            <img width="70%" style="margin-left: 10%; pointer-events: none;" height="auto" src="${url_8}" />
+      </div> 
+      <div style="width: 60%">
+      <p><b>Question#1: Describe in detail the item or alteration that is being used to hide the identity of the person</b></p>
+      <div id="error1_8" style="display: block">Must be between 8 to 30 words long and can contain only alphabets, commas and space</div>
+      <p style="color: #125488"><b>Your answer:</b></p>
+      <crowd-text-area name="question1_8" rows="4" style="background-color: white;border: solid 1px" required></crowd-text-area>
+      <p><b>Question#2: Describe why the item or alteration being used to hide the identity looks unnatural </b></p>
+      <div id="error2_8" style="display: block">Must be between 8 to 30 words long and can contain only alphabets, commas and space</div>
+      <p style="color: #125488"><b>Your answer:</b></p>
+      <crowd-text-area name="question2_8" rows="4" required style="background-color: white; border: solid 1px;"></crowd-text-area>
+      </div>
+      </div>
+  </div> 
+  <div id="q9" class="question" style="display: none">
+      <div style="border-color: black; margin: 1%; padding: 1%;">
+            <div style="display: inline-flex; align-items: center;">
+                  <div style="width: 40%">
+                  <h3>Instructions:</h3>
+                  <ul>
+                        <li>Use complete sentences in your answers.</li>
+                        <li>Your answer should be within 8-30 words.</li>
+                        <li>Do not describe unaltered face parts in the image or parts of the image surrounding the face region.</li>
+                        <li>The opposite diagram shows the face parts for your reference</li>
+                  </ul>
+                  </div>  
+                  <div style="width: 35%">
+                        <img width="100%" height="auto" src="https://custom-images-isi.s3.us-west-1.amazonaws.com/Face+sample.png" style="pointer-events: none;"/> 
+                  </div>
+            </div>
+      </div>
+      <div style="display: inline-flex; justify-content: space-between;width: 100%;">
+      <div style="width: 35%">
+            <img width="70%" style="margin-left: 10%; pointer-events: none;" height="auto" src="${url_9}" />
+      </div> 
+      <div style="width: 60%">
+      <p><b>Question#1: Describe in detail the item or alteration that is being used to hide the identity of the person</b></p>
+      <div id="error1_9" style="display: block">Must be between 8 to 30 words long and can contain only alphabets, commas and space</div>
+      <p style="color: #125488"><b>Your answer:</b></p>
+      <crowd-text-area name="question1_9" rows="4" style="background-color: white;border: solid 1px" required></crowd-text-area>
+      <p><b>Question#2: Describe why the item or alteration being used to hide the identity looks unnatural </b></p>
+      <div id="error2_9" style="display: block">Must be between 8 to 30 words long and can contain only alphabets, commas and space</div>
+      <p style="color: #125488"><b>Your answer:</b></p>
+      <crowd-text-area name="question2_9" rows="4" required style="background-color: white; border: solid 1px;"></crowd-text-area>
+      </div>
+      </div>
+  </div> 
+  <div id="q10" class="question" style="display: none">
+      <div style="border-color: black; margin: 1%; padding: 1%;">
+            <div style="display: inline-flex; align-items: center;">
+                  <div style="width: 40%">
+                  <h3>Instructions:</h3>
+                  <ul>
+                        <li>Use complete sentences in your answers.</li>
+                        <li>Your answer should be within 8-30 words.</li>
+                        <li>Do not describe unaltered face parts in the image or parts of the image surrounding the face region.</li>
+                        <li>The opposite diagram shows the face parts for your reference</li>
+                  </ul>
+                  </div>  
+                  <div style="width: 35%">
+                        <img width="100%" height="auto" src="https://custom-images-isi.s3.us-west-1.amazonaws.com/Face+sample.png" style="pointer-events: none;"/> 
+                  </div>
+            </div>
+      </div>
+      <div style="display: inline-flex; justify-content: space-between;width: 100%;">
+      <div style="width: 35%">
+            <img width="70%" style="margin-left: 10%; pointer-events: none;" height="auto" src="${url_10}" />
+      </div> 
+      <div style="width: 60%">
+      <p><b>Question#1: Describe in detail the item or alteration that is being used to hide the identity of the person</b></p>
+      <div id="error1_10" style="display: block">Must be between 8 to 30 words long and can contain only alphabets, commas and space</div>
+      <p style="color: #125488"><b>Your answer:</b></p>
+      <crowd-text-area name="question1_10" rows="4" style="background-color: white;border: solid 1px" required></crowd-text-area>
+      <p><b>Question#2: Describe why the item or alteration being used to hide the identity looks unnatural </b></p>
+      <p style="color: #125488"><b>Your answer:</b></p>
+      <div id="error2_10" style="display: block">Must be between 8 to 30 words long and can contain only alphabets, commas and space</div>
+      <crowd-text-area name="question2_10" rows="4" required style="background-color: white; border: solid 1px;"></crowd-text-area>
+      </div>
+      </div>
+  </div> 
+  <!-- <center><button type="submit" onsubmit="(ev) => validityCheck(ev)">Submit</button></center> -->
       <br>
-      <br>
-</crowd-form>
+            <br>
+            <br>
+            <br>
+      
+      </crowd-form>
 <script>
+      document.querySelector("crowd-form").onsubmit = (ev) => validityCheck(ev);
+      let isValid = true;
       function sampleContinue() {
             let sample = document.getElementById("sample")
             sample.style.display = "none";
@@ -373,7 +554,7 @@
             let sample = document.getElementById("sample")
             sample.style.display = "block";
       }
-      const NUM_QUESTIONS = 5;
+      const NUM_QUESTIONS = 10;
       var timer;
       function setNext(disabled) {
             let next_btn = document.getElementById("next");
@@ -443,14 +624,49 @@
       }
       function nextPage() {
             let current_page = getCurrentPage();
+            validityCeck(current_page);
             setTimeState(current_page);
             setCurrentPage(current_page + 1);
             setTimer();
       }
       function prevPage() {
             let current_page = getCurrentPage();
+            validityCeck(current_page);
             setTimeState(current_page);
             setCurrentPage(current_page - 1);
             setTimer();
+      }
+
+      function validityCeck(page_number) {
+            let question = document.getElementById("q" + page_number.toString());
+            const textAreas = question.querySelectorAll("crowd-text-area");
+            for(let i=0;i<2;i++) {
+                  let textArea = textAreas[i];
+                  textArea = textArea.shadowRoot.querySelector("paper-input-container");
+                  textArea = textArea.querySelector("iron-autogrow-textarea");
+                  textArea = textArea.shadowRoot.getElementById("textarea");
+                  numWords = textArea.value.split(" ").length;
+                  let errorElement = document.getElementById("error" + (i+1).toString() + "_" + page_number.toString())
+                       if(numWords < 8 || numWords > 30 || !(textArea.value.match(/^[a-zA-Z, ]*$/))) {
+                        isValid = false;
+                        errorElement.style.color = "red";
+                        errorElement.style.fontWeight = "bold";
+                        
+                  } else {
+                        errorElement.style.fontWeight = "normal";
+                        errorElement.style.color = "black";
+                  }
+            }
+      }
+
+      function validityCheck(ev) {
+            const questions = document.getElementsByClassName("question");
+            isValid = true;
+            for(let idx=0;idx < questions.length;idx += 1) {
+                  validityCeck(idx + 1);
+            }
+            if(!isValid) {
+                  ev.preventDefault();
+            }
       }
  </script>

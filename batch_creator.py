@@ -1,6 +1,6 @@
 import csv
 
-def create_batch(file_path,output_file_path,batch_size = 5):
+def create_batch(file_path,output_file_path,batch_size = 10):
     inf = open(file_path, "r")
     csv_reader = csv.DictReader(inf)
     fieldnames = csv_reader.fieldnames
