@@ -1,0 +1,22 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        {% for image in summary %}
+        <div style="display: flex;justify-content: space-between;">
+            <div style="width: 35%;">
+                <img width="100%" height="auto" src="{{image[0]}}" style="pointer-events: none;" /> 
+          </div>
+          <div style="width: 70vw; max-height: 70vh; overflow-y: scroll; margin: 1%; padding: 1%; border: 5px solid blue"> 
+            {% for question in image[1] %}
+           <h4>Question {{ loop.index }}</h4>
+           <p>Total: {{ question[0] }}</p>
+           <p>Approved: {{ question[1] }}</p>
+           <p>Rejected: {{ question[2] }}</p>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+    </body>
+</html>

@@ -1,0 +1,69 @@
+<html>
+    <style>
+        /* .btn {
+            font-size: 12px;
+             line-height: 20px;
+             letter-spacing: 0.06px;
+             padding: 0 20px 0 20px;
+             height: 42px;
+             margin: 0 8px 0 0;
+             background-color: #ff9900;
+             color: white;
+             border-color: #125488;
+             box-sizing: border-box;
+        } */
+        /* .btn_container {
+            margin: 5%;
+        } */
+    </style>
+    <body>
+        <!-- <div style="display: flex;justify-content: space-between;">
+            <div class="btn_container">
+                <button class="btn">Prev</button>
+            </div>
+            <div class="btn_container">
+                <button class="btn">Next</button>
+            </div>
+        </div> -->
+        <form action="/submit" method="POST">
+        {% for image in info.images %}
+        <div style="display: flex; align-items: center; justify-content: space-between">
+          <div style="width: 35%;">
+                <img width="100%" height="auto" src="{{image.url}}" style="pointer-events: none;" /> 
+          </div>
+          <div style="width: 70vw; max-height: 70vh; overflow-y: scroll; margin: 1%; padding: 1%; border: 5px solid blue">
+          <!-- <p>{{image.questions}}</p> -->
+          {% for question in image.questions %}
+            <div class="question">
+                <h4>{{question.question}}</h4>
+                {% for answer in question.answers %}
+                <div>
+                    <p>{{ answer.responder_id }}'s answer</p>
+                    <p>{{ answer.answer }}</p>
+                    <div>
+                        {% if answer.state == "accept" %}
+                        <input type="radio" id="Accept{{answer.id}}" name="{{answer.id}}" value="accept" checked required>
+                        {% else %}
+                        <input type="radio" id="Accept{{answer.id}}" name="{{answer.id}}" value="accept" required>
+                        {% endif %}
+                        <label for="Accept{{answer.id}}">Accept</label>
+                    </div>
+                    <div>
+                        {% if answer.state == "reject" %}
+                        <input type="radio" id="Reject{{answer.id}}" name="{{answer.id}}" value="reject" checked required>
+                        {% else %}
+                        <input type="radio" id="Reject{{answer.id}}" name="{{answer.id}}" value="reject" required>
+                        {% endif %}
+                        <label for="Reject{{answer.id}}">Reject</label>
+                    </div>       
+                </div>
+                {% endfor %}
+            </div> 
+          {% endfor %}
+        </div>
+        </div>
+        {% endfor %}
+        <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

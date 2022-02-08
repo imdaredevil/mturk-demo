@@ -23,10 +23,10 @@ def create_answer_batch(file_path,output_file_path, num_images = NUM_IMAGES, num
                     print(rows[num][f"Answer.question{question + 1}_{image + 1}"][:50])
                     cur_row[fieldname] = rows[num][f"Answer.question{question + 1}_{image + 1}"]
                 elif fieldname == "ground_truth":
-                    cur_row[fieldname] = rows[0][f"Input.attack_id_full_{image + 1}"][:-4]
+                    cur_row[fieldname] = rows[0][f"Input.attack_id_full_{image}"][:-4]
                 else:
-                    cur_row[fieldname] = rows[0][f"Input.{fieldname}_{image + 1}"]
+                    cur_row[fieldname] = rows[0][f"Input.{fieldname}_{image}"]
             csv_writer.writerow(cur_row)
         outf.close()
 
-create_answer_batch(file_path="./AMT_ANSWERS/batch1_new.csv", output_file_path="./AMT_ANSWERS_CLEANED/batch1_new")
+create_answer_batch(file_path="./AMT_ANSWERS/batch1_cropped.csv", output_file_path="./AMT_ANSWERS_CLEANED/batch1_cropped")
